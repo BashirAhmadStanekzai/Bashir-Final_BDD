@@ -1,3 +1,5 @@
+@smoke
+
 Feature: validating correct information on profile side drawer.
 
   Background: long in and sign in button repeats for each scenario

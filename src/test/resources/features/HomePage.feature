@@ -1,3 +1,5 @@
+@smoke
+
 Feature: validating the functionalities of tek insurance
 @US-1
   Scenario: validating header and login create account button

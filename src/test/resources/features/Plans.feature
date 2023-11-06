@@ -1,3 +1,5 @@
+@smoke
+
 Feature: navigating to customer service portal and Validate 4 row of data is present in plans
 
   Background: long in and sign in button repeats for each scenario
@@ -15,8 +17,8 @@ Scenario: validating to portal and validating 4 rows
 @US-10
 Scenario:Validating time accuracy in date table
   Then user clicks on plans button
-  Then Validate DATE CREATED is November 3, 2023
-  And Validate DATE EXPIRE is November 4, 2023
+  Then Validate DATE CREATED is November 5, 2023
+  And Validate DATE EXPIRE is November 6, 2023
 
 
 

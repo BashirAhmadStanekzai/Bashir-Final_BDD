@@ -1,3 +1,5 @@
+@smoke
+
 Feature: logging in to the tek insurance app and validating customer service portal
 
 @US-5

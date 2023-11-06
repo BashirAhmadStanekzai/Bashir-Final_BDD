@@ -20,7 +20,7 @@ public class AccountCreate extends utilities {
 
     }
     @When("when i fill up the form")
-    public void when_i_fill_up_the_form()  {
+    public void when_i_fill_up_the_form() {
         sendText(HomePage.emailLocator, emailAddress);
         WebElement titleElement = getDriver().findElement(By.id("title"));
         Select select = new Select(titleElement);
@@ -40,8 +40,9 @@ public class AccountCreate extends utilities {
 
     }
     @Then("i click create account button")
-    public void i_click_create_account_button() {
+    public void i_click_create_account_button() throws InterruptedException {
         buttonClick(HomePage.createAccountButton);
+        Thread.sleep(5000);
 
 
     }

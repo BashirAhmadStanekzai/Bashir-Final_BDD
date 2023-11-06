@@ -1,5 +1,6 @@
 package tek.bdd.utilities;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -39,6 +40,20 @@ public class utilities extends BaseSetup {
     public String getElementText(By locator) {
         WebElement element = waitUntilVisibilityOfElement(locator);
         return element.getText();
+    }
+
+
+    public void webElement_list_check(By locator, String expectedValue){
+        List<WebElement> elements_list = getListOfElements(locator);
+        String assertionMessage =  "Validating " + expectedValue + ":";
+        for (WebElement element: elements_list){
+            String actualValue = element.getText();
+            if (expectedValue.contains(actualValue)){
+                Assert.assertEquals(assertionMessage, expectedValue, actualValue);
+                System.out.println("expected title: " + expectedValue);
+                System.out.println("actual title: " + actualValue);
+            }
+        }
     }
 
 

@@ -1,3 +1,5 @@
+@smoke
+
 Feature: Accounts - Customer Service Portal and Account Data Validation
 
   Background:

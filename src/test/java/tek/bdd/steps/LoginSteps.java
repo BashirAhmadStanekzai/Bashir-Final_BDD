@@ -9,8 +9,9 @@ import tek.bdd.utilities.utilities;
 public class LoginSteps extends utilities {
 
     @When("user clicks on the login button")
-    public void user_clicks_on_the_login_button() {
+    public void user_clicks_on_the_login_button() throws InterruptedException {
         buttonClick(LoginPage.loginButtonLocator);
+        Thread.sleep(5000);
 
 
     }
@@ -28,8 +29,9 @@ public class LoginSteps extends utilities {
     }
 
     @Then("user click sign in button")
-    public void user_click_sign_in_button() {
+    public void user_click_sign_in_button() throws InterruptedException {
         buttonClick(LoginPage.signInButton);
+        Thread.sleep(5000);
 
 
 
