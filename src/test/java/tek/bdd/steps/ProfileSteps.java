@@ -18,8 +18,6 @@ public class ProfileSteps extends utilities {
         buttonClick(ProfilePage.PROFILE_BUTTON);
         Thread.sleep(2000);
 
-
-
     }
     @And("validate {string} is correct")
     public void validate_user_status_is_correct( String expectedStatus) {
@@ -46,6 +44,19 @@ public class ProfileSteps extends utilities {
     public void validate_user_Authorities_is_correct(String expectedAuthorities) {
         String actualAuthorities=getElementText(ProfilePage.USER_AUTHORITIES);
         Assert.assertEquals("validate user Authorities",expectedAuthorities,actualAuthorities);
+
+    }
+
+    @Then("user clicks on logout button")
+    public void user_clicks_on_logout_button() throws InterruptedException {
+        buttonClick(ProfilePage.LOGOUT_LOCATOR);
+        Thread.sleep(5000);
+    }
+    @Then("user is on homepage")
+    public void user_is_on_homepage() {
+        String actualText = getElementText(ProfilePage.HEADING_LOCATOR);
+        String expectedText = "Lets get you started";
+        Assert.assertEquals(actualText,expectedText);
 
     }
 }
