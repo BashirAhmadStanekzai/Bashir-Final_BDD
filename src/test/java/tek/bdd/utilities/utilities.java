@@ -57,7 +57,6 @@ public class utilities extends BaseSetup {
     }
 
 
-
     public void selectFromDropDown(By locator, String option) {
         WebElement dropdownElement = waitUntilVisibilityOfElement(locator);
         Select dropdown = new Select(dropdownElement);

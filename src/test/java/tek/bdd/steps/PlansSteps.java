@@ -5,9 +5,17 @@ import org.junit.Assert;
 import tek.bdd.pages.PlansPage;
 import tek.bdd.utilities.utilities;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class PlansSteps extends utilities {
+
+    Date date = new Date();
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMM d, yyyy");
+    String todaySFormattedDate = simpleDateFormat.format(date);
+    Calendar calendar = Calendar.getInstance();
+
 
     @Then("user clicks on plans button")
     public void user_clicks_on_plans_button() throws InterruptedException {
@@ -24,39 +32,42 @@ public class PlansSteps extends utilities {
 
     }
 
-    @Then("Validate DATE CREATED is {}")
-    public void validate_date_created_is_today_s(String expectedDate ) {
-        Date expextedDate = new Date();
+    @Then("Validate DATE CREATED is today")
+    public void validateDateCreatedIsTodayS() {
+
         String actualDate= getElementText(PlansPage.TODAY_DATE);
         String actualDate2= getElementText((PlansPage.TODAY_DATE_2));
         String actualDate3 = getElementText(PlansPage.TODAY_DATE_3);
         String actualDate4= getElementText(PlansPage.TODAY_DATE_4);
 
         Assert.assertEquals("validating date created column",
-                expectedDate, actualDate);
+                todaySFormattedDate, actualDate);
         Assert.assertEquals("validating date created column",
-                expectedDate, actualDate2);
+                todaySFormattedDate, actualDate2);
         Assert.assertEquals("validating date created column",
-                expectedDate, actualDate3);
+                todaySFormattedDate, actualDate3);
         Assert.assertEquals("validating date created column",
-                expectedDate, actualDate4);
+                todaySFormattedDate, actualDate4);
 
     }
-    @Then("Validate DATE EXPIRE is {}")
-    public void validate_date_expire_is_day_after(String expectedDate) {
+    @Then("Validate DATE EXPIRE is tomorrow")
+    public void validateDateExpireIsTomorrow() {
+        calendar.add(Calendar.DATE,1);
+        String tomorrowSDateFormatted = simpleDateFormat.format(calendar.getTime());
+
         String actualDate = getElementText(PlansPage.DAY_AFTER_DATE);
         String actualDate2 = getElementText((PlansPage.DAY_AFTER_DATE_2));
         String actualDate3 = getElementText(PlansPage.DAY_AFTER_DATE_3);
         String actualDate4 = getElementText(PlansPage.DAY_AFTER_DATE_4);
 
         Assert.assertEquals("validating date created column",
-                expectedDate, actualDate);
+                tomorrowSDateFormatted, actualDate);
         Assert.assertEquals("validating date created column",
-                expectedDate, actualDate2);
+                tomorrowSDateFormatted, actualDate2);
         Assert.assertEquals("validating date created column",
-                expectedDate, actualDate3);
+                tomorrowSDateFormatted, actualDate3);
         Assert.assertEquals("validating date created column",
-                expectedDate, actualDate4);
+                tomorrowSDateFormatted, actualDate4);
 
 
 

@@ -17,8 +17,8 @@ Scenario: validating to portal and validating 4 rows
 @US-10
 Scenario:Validating time accuracy in date table
   Then user clicks on plans button
-  Then Validate DATE CREATED is November 5, 2023
-  And Validate DATE EXPIRE is November 6, 2023
+  Then Validate DATE CREATED is today
+  And Validate DATE EXPIRE is tomorrow
 
 
 
